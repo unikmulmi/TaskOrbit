@@ -67,4 +67,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Project::class , 'updated_by');
     }
+
+    public function assignedTasks(): HasMany
+    {
+        return $this->hasMany(Task::class , 'assigned_user_id');
+    }
 }
