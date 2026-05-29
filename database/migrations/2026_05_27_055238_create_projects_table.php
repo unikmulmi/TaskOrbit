@@ -19,7 +19,7 @@ return new class extends Migration
             $table->timestamp('end_date')->nullable();
             $table->json('files')->nullable();
             $table->enum('status' , ['pending' , 'on_hold' , 'in_progress' , 'completed' , 'cancelled'])->default('pending');
-            $table->foreignId('created_by')->constrained('users')->nullOnDelete();
+            $table->foreignId('created_by')->nullable()->constrained('users')->nullOnDelete();
             $table->foreignId('updated_by')->nullable()->constrained('users')->nullOnDelete();
             $table->timestamps();
         });
