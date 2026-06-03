@@ -37,7 +37,7 @@ class ProjectForm
                     ->native(false)
                     ->displayFormat('M d, Y H:i')
                     ->placeholder('Select deadline')
-                    ->minDate(fn (callable $get) => $get('start_date')),
+                    ->minDate(fn(callable $get) => $get('start_date')),
                 FileUpload::make('files')
                     ->multiple()
                     ->disk('public')
@@ -51,7 +51,10 @@ class ProjectForm
                     ->helperText('Upload project documents, images, or reports')
                     ->reorderable(),
                 ToggleButtons::make('status')
-                    ->grouped()
+                    ->columns([
+                        'default' => 2,
+                        'lg' => 4,
+                    ])
                     ->options([
                         'pending' => 'Pending',
                         'on_hold' => 'On hold',
@@ -88,7 +91,7 @@ class ProjectForm
                     ->relationship('updater', 'name')
                     ->searchable()
                     ->preload()
-                    ->label('Updated_by')
+                    ->label('Updated by')
                     ->default(Auth::user()->id)
                     ->required()
                     ->disabled()

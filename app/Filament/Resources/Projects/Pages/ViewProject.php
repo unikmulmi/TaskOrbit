@@ -10,6 +10,11 @@ class ViewProject extends ViewRecord
 {
     protected static string $resource = ProjectResource::class;
 
+    public function getHeading(): string
+    {
+        return $this->getRecord()->name;
+    }
+
     protected function getHeaderActions(): array
     {
         return [

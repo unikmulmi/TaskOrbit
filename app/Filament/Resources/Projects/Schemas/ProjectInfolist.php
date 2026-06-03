@@ -14,7 +14,6 @@ class ProjectInfolist
                 TextEntry::make('name')
                     ->label('Project Name')
                     ->weight('bold')
-                    ->color('primary')
                     ->copyable(),
                 TextEntry::make('description')
                     ->label('Description')
