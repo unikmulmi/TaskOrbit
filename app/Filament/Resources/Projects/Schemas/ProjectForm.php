@@ -51,10 +51,7 @@ class ProjectForm
                     ->helperText('Upload project documents, images, or reports')
                     ->reorderable(),
                 ToggleButtons::make('status')
-                    ->columns([
-                        'default' => 2,
-                        'lg' => 4,
-                    ])
+                    ->inline()
                     ->options([
                         'pending' => 'Pending',
                         'on_hold' => 'On hold',
