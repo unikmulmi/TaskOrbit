@@ -12,7 +12,7 @@ class ViewProject extends ViewRecord
 
     public function getHeading(): string
     {
-        return $this->getRecord()->name;
+        return ucfirst($this->getRecord()->name);
     }
 
     protected function getHeaderActions(): array

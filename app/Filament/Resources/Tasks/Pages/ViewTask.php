@@ -10,6 +10,11 @@ class ViewTask extends ViewRecord
 {
     protected static string $resource = TaskResource::class;
 
+    public function getHeading(): string
+    {
+        return ucfirst($this->getRecord()->name);
+    }
+
     protected function getHeaderActions(): array
     {
         return [

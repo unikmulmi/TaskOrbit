@@ -72,7 +72,7 @@ class ProjectInfolist
                     ->label('Creator')
                     ->placeholder('-'),
                 TextEntry::make('updater.name')
-                    ->label('Updated_by')
+                    ->label('Updated by')
                     ->placeholder('-'),
                 TextEntry::make('created_at')
                     ->dateTime('M d, Y h:i A')
