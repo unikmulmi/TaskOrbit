@@ -12,11 +12,11 @@ class TaskInfolist
         return $schema
             ->components([
                 TextEntry::make('name')
-                    ->label('Project Name')
+                    ->label('Task Name')
                     ->weight('bold')
                     ->copyable(),
                 TextEntry::make('description')
-                    ->label('Description')
+                    ->label('Task Description')
                     ->placeholder('No description provided.')
                     ->columnSpanFull()
                     ->prose(),
@@ -57,7 +57,7 @@ class TaskInfolist
                     ->placeholder('-')
                     ->weight('bold'),
                 TextEntry::make('project.name')
-                    ->label('Project')
+                    ->label('Associated Project')
                     ->color('primary')
                     ->url(
                         fn($record) => $record->project
@@ -65,7 +65,7 @@ class TaskInfolist
                             : null
                     ),
                 TextEntry::make('creator.name')
-                    ->label('Creator')
+                    ->label('Task Creator')
                     ->placeholder('-'),
                 TextEntry::make('updater.name')
                     ->label('Updated by')
