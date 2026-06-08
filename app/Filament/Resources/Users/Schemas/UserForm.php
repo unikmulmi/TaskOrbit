@@ -14,8 +14,7 @@ class UserForm
             ->components([
                 TextInput::make('name')
                     ->required()
-                    ->maxLength(255)
-                    ->autofocus(),
+                    ->maxLength(255),
                 TextInput::make('email')
                     ->label('Email Address')
                     ->email()

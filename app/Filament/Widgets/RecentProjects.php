@@ -26,7 +26,11 @@ class RecentProjects extends TableWidget
                 TextColumn::make('name')
                     ->searchable()
                     ->sortable()
-                    ->weight('bold'),
+                    ->weight('bold')
+                    ->url(fn(Project $record) => route(
+                        'filament.admin.resources.projects.view',
+                        $record
+                    )),
                 TextColumn::make('files')
                     ->label('Attached Files')
                     ->formatStateUsing(function ($state) {

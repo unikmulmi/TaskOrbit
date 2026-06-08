@@ -27,7 +27,11 @@ class RecentTasks extends TableWidget
             ->columns([
                 TextColumn::make('name')
                     ->searchable()
-                    ->weight('bold'),
+                    ->weight('bold')
+                    ->url(fn(Task $record) => route(
+                        'filament.admin.resources.tasks.view',
+                        $record
+                    )),
                 TextColumn::make('description')
                     ->limit(50) // words(10) also works.
                     ->toggleable(isToggledHiddenByDefault: true),
