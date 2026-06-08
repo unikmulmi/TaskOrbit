@@ -52,10 +52,13 @@ class TaskInfolist
                     ->label('Due date')
                     ->dateTime('M d, Y h:i A')
                     ->placeholder('⏳ No deadline set'),
-                TextEntry::make('assignedUser.name')
-                    ->label('Assigned To')
-                    ->placeholder('-')
-                    ->weight('bold'),
+                // TextEntry::make('assignedUser.name')
+                //     ->label('Assigned To')
+                //     ->placeholder('-')
+                //     ->weight('bold'),
+                TextEntry::make('assignedUsers.name')
+                    ->label('Assigned Users')
+                    ->bulleted(),
                 TextEntry::make('project.name')
                     ->label('Associated Project')
                     ->color('primary')

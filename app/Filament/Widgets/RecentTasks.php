@@ -21,7 +21,7 @@ class RecentTasks extends TableWidget
             ->query(fn(): Builder => Task::query()->latest()->limit(5)->with([
                 'creator',
                 'updater',
-                'assignedUser',
+                'assignedUsers',
                 'project',
             ]))
             ->columns([
@@ -72,12 +72,19 @@ class RecentTasks extends TableWidget
                     ->date('M d, Y')
                     ->placeholder('⏳ No deadline set')
                     ->sortable(),
-                TextColumn::make('assignedUser.name')
-                    ->label('Assigned To')
-                    ->placeholder('Unassigned')
+                // TextColumn::make('assignedUser.name')
+                //     ->label('Assigned To')
+                //     ->placeholder('Unassigned')
+                //     ->searchable()
+                //     ->sortable()
+                //     ->toggleable(isToggledHiddenByDefault: false),
+
+                TextColumn::make('assignedUsers.name')
+                    ->label('Assigned Users')
+                    ->badge()
                     ->searchable()
-                    ->sortable()
                     ->toggleable(isToggledHiddenByDefault: false),
+
                 TextColumn::make('project.name')
                     ->searchable()
                     ->sortable()

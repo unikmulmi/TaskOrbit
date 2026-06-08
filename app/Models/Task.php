@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Task extends Model
 {
@@ -17,7 +18,6 @@ class Task extends Model
         'status',
         'priority',
         'due_date',
-        'assigned_user_id',
         'project_id',
         'created_by',
         'updated_by',
@@ -38,8 +38,8 @@ class Task extends Model
         return $this->belongsTo(Project::class);
     }
 
-    public function assignedUser(): BelongsTo
+    public function assignedUsers(): BelongsToMany
     {
-        return $this->belongsTo(User::class , 'assigned_user_id');
+        return $this->belongsToMany(User::class , 'task_user');
     }
 }

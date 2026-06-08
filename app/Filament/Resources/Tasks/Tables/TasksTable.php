@@ -58,12 +58,12 @@ class TasksTable
                     ->date('M d, Y')
                     ->placeholder('⏳ No deadline set')
                     ->sortable(),
-                TextColumn::make('assignedUser.name')
-                    ->label('Assigned To')
-                    ->placeholder('Unassigned')
-                    ->searchable()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: false),
+                // TextColumn::make('assignedUser.name')
+                //     ->label('Assigned To')
+                //     ->placeholder('Unassigned')
+                //     ->searchable()
+                //     ->sortable()
+                //     ->toggleable(isToggledHiddenByDefault: false),
                 TextColumn::make('project.name')
                     ->searchable()
                     ->sortable()
