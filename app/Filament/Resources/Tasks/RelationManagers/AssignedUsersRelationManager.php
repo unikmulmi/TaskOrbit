@@ -19,12 +19,16 @@ class AssignedUsersRelationManager extends RelationManager
         return $table
             ->columns([
                 TextColumn::make('name')
-                    ->searchable(),
-
+                    ->searchable()
+                    ->badge()
+                    ->url(
+                        fn($record) =>
+                        route('filament.admin.resources.users.view', $record)
+                    ),
                 TextColumn::make('email'),
             ])
             ->recordActions([
-                DetachAction::make(),
+            
             ]);
     }
 }

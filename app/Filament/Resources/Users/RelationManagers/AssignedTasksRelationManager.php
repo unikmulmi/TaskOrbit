@@ -7,7 +7,7 @@ use Filament\Actions\CreateAction;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables\Table;
 
-class TasksRelationManager extends RelationManager
+class AssignedTasksRelationManager extends RelationManager
 {
     protected static string $relationship = 'tasks';
 

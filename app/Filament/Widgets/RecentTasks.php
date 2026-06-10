@@ -14,6 +14,8 @@ class RecentTasks extends TableWidget
     protected array|string|int $columnSpan = 'full';
 
     protected static ?int $sort = 2;
+    
+    protected static ?string $pollingInterval = '15s';
 
     public function table(Table $table): Table
     {

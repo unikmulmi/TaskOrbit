@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Tasks\Tables;
 
+use App\Filament\Resources\Projects\ProjectResource;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
@@ -68,8 +69,8 @@ class TasksTable
                     ->searchable()
                     ->sortable()
                     ->url(
-                        fn($record) => $record->project ?
-                            route('filament.admin.resources.projects.view', $record->project)
+                        fn($record) => $record->project
+                            ? ProjectResource::getUrl('view', ['record' => $record->project])
                             : null
                     ),
                 TextColumn::make('creator.name')

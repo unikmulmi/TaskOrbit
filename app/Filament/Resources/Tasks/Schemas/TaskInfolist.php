@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Tasks\Schemas;
 
+use App\Filament\Resources\Projects\ProjectResource;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Schemas\Schema;
 
@@ -64,7 +65,7 @@ class TaskInfolist
                     ->color('primary')
                     ->url(
                         fn($record) => $record->project
-                            ? route('filament.admin.resources.projects.view', $record->project)
+                            ? ProjectResource::getUrl('view', ['record' => $record->project])
                             : null
                     ),
                 TextEntry::make('creator.name')

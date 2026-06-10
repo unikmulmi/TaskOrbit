@@ -19,7 +19,8 @@ class UserForm
                     ->label('Email Address')
                     ->email()
                     ->required()
-                    ->maxLength(255),
+                    ->maxLength(255)
+                    ->unique(ignoreRecord: true),
                 DateTimePicker::make('email_verified_at')
                     ->label('Email Verified At')
                     ->placeholder('Select verification date and time')

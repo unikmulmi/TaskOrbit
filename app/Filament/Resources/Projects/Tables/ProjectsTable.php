@@ -76,7 +76,7 @@ class ProjectsTable
                     ->label('Creator')
                     ->searchable()
                     ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: false),
+                    ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updater.name')
                     ->label('Updated by')
                     ->searchable()

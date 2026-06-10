@@ -2,7 +2,6 @@
 
 namespace App\Filament\Resources\Users;
 
-use App\Filament\Resources\Projects\RelationManagers\TasksRelationManager;
 use App\Filament\Resources\Users\Pages\CreateUser;
 use App\Filament\Resources\Users\Pages\EditUser;
 use App\Filament\Resources\Users\Pages\ListUsers;
@@ -44,7 +43,7 @@ class UserResource extends Resource
     public static function getRelations(): array
     {
         return [
-            TasksRelationManager::class
+            AssignedTasksRelationManager::class
         ];
     }
 
