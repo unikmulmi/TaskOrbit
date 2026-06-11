@@ -3,6 +3,7 @@
 namespace App\Filament\Widgets;
 
 use App\Models\Task;
+use BezhanSalleh\FilamentShield\Traits\HasWidgetShield;
 use Filament\Actions\BulkActionGroup;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
@@ -11,6 +12,8 @@ use Illuminate\Database\Eloquent\Builder;
 
 class RecentTasks extends TableWidget
 {
+    use HasWidgetShield;
+
     protected array|string|int $columnSpan = 'full';
 
     protected static ?int $sort = 2;
