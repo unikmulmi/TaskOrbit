@@ -23,11 +23,11 @@ class UsersTable
                     ->label('Email address')
                     ->searchable(),
                 TextColumn::make('roles.name')
-                ->badge(),
+                    ->badge(),
                 TextColumn::make('email_verified_at')
-                     ->dateTime()
-                     ->sortable()
-                     ->toggleable(isToggledHiddenByDefault: true),
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
