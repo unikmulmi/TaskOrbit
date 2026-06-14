@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Tasks\Schemas;
 
+use App\Models\Project;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\Select;
@@ -77,7 +78,10 @@ class TaskForm
                     ->label('Due Date')
                     ->placeholder('Select a due date')
                     ->native(false)
-                    ->minDate(now()),
+                    ->minDate(now())
+                    ->maxDate(function (callable $get) {
+                        return Project::find($get('project_id'))?->end_date;
+                    }),
                 // Select::make('assigned_user_id')
                 //     ->relationship('assignedUser', 'name')
                 //     ->label('Assign Task To')

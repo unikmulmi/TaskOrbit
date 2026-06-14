@@ -18,7 +18,8 @@ class TasksTable
             ->columns([
                 TextColumn::make('name')
                     ->searchable()
-                    ->weight('bold'),
+                    ->weight('bold')
+                    ->limit(50),
                 TextColumn::make('description')
                     ->limit(50) // words(10) also works.
                     ->toggleable(isToggledHiddenByDefault: true),
@@ -72,7 +73,8 @@ class TasksTable
                         fn($record) => $record->project
                             ? ProjectResource::getUrl('view', ['record' => $record->project])
                             : null
-                    ),
+                    )
+                    ->toggleable(isToggledHiddenByDefault: false),
                 TextColumn::make('creator.name')
                     ->label('Task Creator')
                     ->searchable()
