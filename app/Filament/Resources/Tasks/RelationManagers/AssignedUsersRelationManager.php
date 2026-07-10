@@ -25,8 +25,6 @@ class AssignedUsersRelationManager extends RelationManager
                     ),
                 TextColumn::make('email'),
             ])
-            ->recordActions([
-            
-            ]);
+            ->recordActions([]);
     }
 }
