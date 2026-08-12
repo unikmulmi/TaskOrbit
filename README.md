@@ -2,7 +2,7 @@
 
 > A Laravel-based project management system with a Filament-powered administrative dashboard.
 
-![TaskOrbit Dashboard](screenshots/dashboard.png)
+![TaskOrbit Dashboard](screenshots/filament-dashboard.png)
 
 ## Table of Contents
 
@@ -95,9 +95,39 @@ TaskOrbit is a project management system currently focused on its administrative
 
 ## Screenshots
 
+### Authentication
+
+![TaskOrbit Sign In](screenshots/login.png)
+
 ### Dashboard
 
 ![TaskOrbit Dashboard](screenshots/dashboard.png)
+
+### Project Management
+
+![TaskOrbit Projects](screenshots/projects.png)
+
+![TaskOrbit Project View](screenshots/project-view.png)
+
+### Create Project
+
+![TaskOrbit Create Project](screenshots/create-project.png)
+
+### Task Management
+
+![TaskOrbit Task View](screenshots/task-view.png)
+
+### Role-Based Access Control
+
+![TaskOrbit Filament Shield Roles](screenshots/filament-shield-roles.png)
+
+### Responsive Design
+
+![TaskOrbit Mobile Dashboard](screenshots/mobile-home.png)
+
+### Light Mode
+
+![TaskOrbit Light Mode Dashboard](screenshots/home-white.png)
 
 ## Role-Based Access Control
 
@@ -177,12 +207,6 @@ DB_PASSWORD=
 php artisan migrate
 ```
 
-If seeders are available and you want to populate the database with sample data:
-
-```bash
-php artisan migrate --seed
-```
-
 ### 7. Create the Storage Link
 
 ```bash
@@ -251,7 +275,7 @@ Planned improvements for TaskOrbit include:
 - Add notifications
 - Add advanced task filtering
 - Add project progress tracking
-- add Kanban / board view (and/or calendar view)
+- Add Kanban / board view (and/or calendar view)
 - Add user-specific dashboards
 - Add email notifications
 - Add API endpoints & automated tests
